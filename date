@@ -1,0 +1,16 @@
+var h=require('http');
+var dt=require('./myfirstmodule');
+h.createServer( function(req,res){
+res.writeHead(200,{'content-type':'text/html'});
+res.write(" CURRENT DATE"+dt.myDateTime());
+res.write(<br>"URL PATTERN "+req.url);
+res.end('hello world');
+}).listen(8095);
+
+
+
+
+
+exports.myDateTime=function(){
+return Date();
+};
