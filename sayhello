@@ -1,0 +1,16 @@
+var h=require('http');
+var sh=require('./sayhello');
+h.createServer( function(req,res){
+res.writeHead(200,{'content-type':'text/html'});
+res.write("MESG "+sh.hello());
+res.write("<br>URL PATTERN <br>"+req.url);
+res.end("end : hello world");
+}).listen(8095);
+
+
+
+
+exports.hello=function(){
+var h="<p style='color:blue;font-size:20px;'>say hello</p>";
+return h;
+};
